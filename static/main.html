@@ -1,3 +1,24 @@
-<script>
-  console.log(windows.location.href)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Discord Bot Bearer Token</title>
+</head>
+<body>
+    <div id="text"></div>
+</body>
+<script type="text/javascript">
+    function GetURLParameter(sParam) {
+        var sPageURL = window.location.search.substring(1);
+        var sURLVariables = sPageURL.split('&');
+        for (var i = 0; i < sURLVariables.length; i++) {
+            var sParameterName = sURLVariables[i].split('=');
+            if (sParameterName[0] == sParam) {
+            return sParameterName[1];
+            }
+        }
+    }
+    const textBox = document.getElementById('text');
+    textBox.innerHTML = GetURLParameter('access_token')
 </script>
+</html>
